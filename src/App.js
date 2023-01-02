@@ -18,19 +18,20 @@ function App() {
   
   
   return (
-    <div className="App">
+    <div className="App" >
       
     {/* boton desplegable */}
     <BotonDesplegable />
-
-      <br/><input type="text" placeholder='Ingrese el texto superior' onChange={onChangeTexto1}/><br/>
-      <input type="text" placeholder='Ingrese el texto inferior' onChange={onChangeTexto2}/>
-      <br/><br/>
+      <div className='input d-flex container'>
+        <input type="text" placeholder='Ingrese el texto superior' onChange={onChangeTexto1}/>
+        <input type="text" placeholder='Ingrese el texto inferior' onChange={onChangeTexto2}/>
+      </div>      
+      <button>Exportar</button>
+      <div>
       <span>{texto1}</span><br/>
-      <span>{texto2}</span>
+      <span>{texto2}</span><br/>
+      </div>
       
-    
-
     </div>
   );
 }

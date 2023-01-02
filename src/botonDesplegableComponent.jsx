@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { Dropdown } from "react-bootstrap";
+import bootstrap from "bootstrap";
 
 function BotonDesplegable() {
-    const [texto1, setTexto1] = useState('Elijan si imagen')
+    const [texto1, setTexto1] = useState('Elija su imagen')
     
     const nombreImagen = (event) => {
         setTexto1(event.target.value)
@@ -11,18 +11,14 @@ function BotonDesplegable() {
 
     return (
 
-        <div>
-            <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    {texto1}
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                    <Dropdown.Item as="button">Action</Dropdown.Item>
-                    <Dropdown.Item as="button">Another action</Dropdown.Item>
-                    <Dropdown.Item as="button">Something else</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
+        <div className="boton" >
+            <select onChange={nombreImagen}>
+                <option value="banner">Banner</option>
+                <option value="fondo">Fondo de Escritorio</option>
+            </select>
+            <br/>
+            <img src={"/"+ texto1 + ".jpg"} />
+           
         </div>
     )
 }
